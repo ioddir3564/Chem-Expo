@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>Create Post</h1>
+    <form action="/createPost" method="POST">
+        <label for="">Author</label>
+        <input type="text" name="author">
+        <br>
+        <label for="">Title</label>
+        <input type="text" name="title">
+<br>
+        <label for="">Date</label>
+        <input type="text" name="date">
+<br>
+        <label for="">Content</label>
+        <textarea name="content" cols="30" rows="10"></textarea>
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>

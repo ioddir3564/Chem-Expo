@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  /* background: #228B22; */
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 10%;
+
+}
+
+
+.container {
+  width: 100%;
+  background: #BCE6FB;
+}
+
+.wrapper {
+  width: 100%;
+  background: #228B22;
+  text-align: center;
+}
+
+header {
+  /* background: #3CB371; */
+  height: auto;
+  text-align: center;
+
+}
+
+.SearchBar {
+  /* padding: 20px 100px 10px 100px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  background-color: #98FB98;
+  text-align: center;
+  font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Blog {
+  text-align: left;
+  text-align: bottom;
+}
+
+.Post {
+  padding: 50px 100px 100px 100px;
+  width: 60%;
+  background-color: #F5F5F5;
+  text-align: left;
+  border: solid black;
+  border-width: 0.0001px;
+  border-radius: 10px;
+  margin-left: 64%;
+}
+
+.post-container{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  margin-top: 30px;
+
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav ul {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 30px 50px;
+  padding-top: 5px;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+}

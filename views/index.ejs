@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chem Expo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+<div class="wrapper">
+  <img src="Chem expo logo.png" alt="logo" class="logo">
+</div>
+
+  <header id="header1">
+    <div class="container">
+
+      <nav>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  
+    <div class="SearchBar">
+      <h1>Discover Chemistry</h1>
+      <input id="search" type="text" onkeyup="myFunction2()" placeholder="Search by Keyword">
+        <div class="searchbtn">
+        </div>
+      </div>
+    </header>
+      
+      <div class="post-container">
+      <% for (var i = arr.length-1; i >= 0; i--) { %>
+
+        <div class="Post">
+          <h4><%= arr[i].title %></h4>
+          <p><%= arr[i].content %></p>
+        </div>
+        <hr style="visibility:hidden;">
+ <%   } %>
+      </div>
+  </body>
+</html>
+
+<script src="index.js" charset="utf-8"></script>
