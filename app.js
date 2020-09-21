@@ -60,6 +60,10 @@ app.get('/', function(req, res){
     
 })
 
+app.get('/history', function(req, res){
+    res.render("history")
+})
+
 app.get('/admin', function(req,res){
     res.render('admin')
 })

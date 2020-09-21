@@ -19,6 +19,7 @@ html {
 .container {
   width: 100%;
   background: #BCE6FB;
+  
 }
 
 .wrapper {
@@ -89,6 +90,20 @@ nav li {
 
 nav a {
   color: #444;
+  padding: 10px;
   text-decoration: none;
-  text-transform: uppercase;
+  
+}
+nav a:hover {
+  border: solid black;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: red;
+}
+
+#current {
+  /* border: solid black;
+  border-radius: 5px; */
+  font-weight: bold;
+  /* background-color: red; */
 }
