@@ -15,6 +15,46 @@ html {
 
 }
 
+.pop {
+  border: solid black;
+  border-width: 1px;
+  padding: 5px;
+  float: right;
+  text-decoration: none;
+}
+.pop:hover{
+  color: white;
+  background-color:rgb(86, 195, 91);;
+}
+.stay {
+
+  border: solid black;
+  border-width: 1px;
+  padding: 5px;
+  float: right;
+  margin-right: 50px;
+  text-decoration: none;
+}
+.stay:hover{
+  color: white;
+  background-color: rgb(86, 195, 91);
+}
+.new {
+  border: solid black;
+  border-width: 1px;
+  padding: 5px;
+  float: right;
+  margin-right: 60px;
+  text-decoration: none;
+}
+.new:hover{
+  color: white;
+  background-color:rgb(86, 195, 91);;
+}
+
+.title {
+  font-size: 300%;
+}
 
 .container {
   width: 100%;
@@ -88,22 +128,25 @@ nav li {
   padding-top: 5px;
 }
 
-nav a {
+.others {
   color: #444;
   padding: 10px;
   text-decoration: none;
   
 }
-nav a:hover {
+.others:hover {
   border: solid black;
   border-radius: 5px;
+  border-width: 1px;
   font-weight: bold;
-  background-color: red;
+  color: white;
+  background-color: rgb(86, 195, 91);
 }
 
 #current {
   /* border: solid black;
   border-radius: 5px; */
   font-weight: bold;
+  text-decoration: none;
   /* background-color: red; */
 }

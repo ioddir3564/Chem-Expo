@@ -17,10 +17,10 @@
       <nav>
         <ul>
           <li><a id="current" href="#">Blog</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="/history">History</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="#">About</a></li>
+          <li><a class="others" href="#">Courses</a></li>
+          <li><a class="others" href="/history">History</a></li>
+          <li><a class="others" href="#">Resources</a></li>
+          <li><a class="others" href="#">About</a></li>
         </ul>
       </nav>
 
@@ -38,8 +38,12 @@
       <% for (var i = arr.length-1; i >= 0; i--) { %>
 
         <div class="Post">
-          <h4><%= arr[i].title %></h4>
+          <a class=pop href="#">View Pop up</a>
+          <a class=stay href="#">Same page</a>
+          <a class=new href="#" target="_blank">New link</a>
+          <h4 class="title"><%= arr[i].title %></h4>
           <p><%= arr[i].content %></p>
+          
         </div>
         <hr style="visibility:hidden;">
  <%   } %>
