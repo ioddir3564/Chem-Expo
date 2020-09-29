@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  /* background: #228B22; */
+  background: #F5F5F5;
   font-family: 'Work Sans', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
@@ -20,7 +20,9 @@ html {
   border-width: 1px;
   padding: 5px;
   float: right;
+  margin-right: 5%;
   text-decoration: none;
+  margin-inline: auto;
 }
 .pop:hover{
   color: white;
@@ -32,8 +34,9 @@ html {
   border-width: 1px;
   padding: 5px;
   float: right;
-  margin-right: 50px;
+  margin-right: 5%;
   text-decoration: none;
+  margin-inline: auto;
 }
 .stay:hover{
   color: white;
@@ -44,8 +47,9 @@ html {
   border-width: 1px;
   padding: 5px;
   float: right;
-  margin-right: 60px;
+  margin-right: 5%;
   text-decoration: none;
+  margin-inline: auto;
 }
 .new:hover{
   color: white;
@@ -68,6 +72,7 @@ html {
   text-align: center;
 }
 
+
 header {
   /* background: #3CB371; */
   height: auto;
@@ -77,12 +82,32 @@ header {
 
 .SearchBar {
   /* padding: 20px 100px 10px 100px; */
+  position: fixed;
+  margin-left: 13%;
+  top: 300px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 100%;
-  background-color: #98FB98;
+  width: 20%;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   text-align: center;
   font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.Fact {
+  max-height: 20%;
+  padding: 50px 50px 100px 50px;
+  overflow-y: scroll;
+  position: fixed;
+  margin-left: 13%;
+  top: 500px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 20%;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  text-align: center;
+  font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 .Blog {
@@ -93,12 +118,13 @@ header {
 .Post {
   padding: 50px 100px 100px 100px;
   width: 60%;
-  background-color: #F5F5F5;
+  background-color: white;
   text-align: left;
   border: solid black;
   border-width: 0.0001px;
   border-radius: 10px;
   margin-left: 64%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
 
 .post-container{
@@ -106,6 +132,9 @@ header {
   height: 100%;
   text-align: center;
   margin-top: 30px;
+  margin-left: 15%;
+  
+
 
 }
 
@@ -124,7 +153,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin: 30px 50px;
+  margin: 30px 1%;
   padding-top: 5px;
 }
 
@@ -149,4 +178,34 @@ nav li {
   font-weight: bold;
   text-decoration: none;
   /* background-color: red; */
+}
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+#text-box{
+  padding: 20px;
+  height: 90%;
+  width: 50%;
+  overflow-y: scroll;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: black;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  
 }

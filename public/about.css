@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    background: #F5F5F5;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .logo {
+    width: 10%;
+  
+  }
+  
+  .wrapper {
+    width: 100%;
+    background: #228B22;
+    text-align: center;
+  }
+
+
+header {
+    /* background: #3CB371; */
+    height: auto;
+    text-align: center;
+  
+  }
+
+  .container {
+    width: 100%;
+    background: #BCE6FB;
+    
+  }
+  
+  .person{
+      display: inline-block;
+      width: 15%;
+      height: auto;
+      text-align: center;
+  }
+
+  .image {
+      border-radius: 50%;
+      width: 50%;
+      height: auto;
+  }
+
+  .description {
+      font-size: medium;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: lighter;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      width: 70%;
+  }
+
+  #current {
+    /* border: solid black;
+    border-radius: 5px; */
+    font-weight: bold;
+    text-decoration: none;
+    /* background-color: red; */
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  nav ul {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin: 30px 1%;
+    padding-top: 5px;
+  }
+  
+  .others {
+    color: #444;
+    padding: 10px;
+    text-decoration: none;
+    
+  }
+  .others:hover {
+    border: solid black;
+    border-radius: 5px;
+    border-width: 1px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(86, 195, 91);
+  }

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-
+    
 <div class="wrapper">
   <img src="Chem expo logo.png" alt="logo" class="logo">
 </div>
@@ -17,32 +17,56 @@
       <nav>
         <ul>
           <li><a id="current" href="#">Blog</a></li>
-          <li><a class="others" href="#">Courses</a></li>
-          <li><a class="others" href="/history">History</a></li>
-          <li><a class="others" href="#">Resources</a></li>
-          <li><a class="others" href="#">About</a></li>
+          <li><a class="others" href="/history">History</a></li> 
+          <li id="courses"><a class="others" href="#">Courses</a></li>
+          <li><a class="others" href="/resources">Resources</a></li>
+          <li><a class="others" href="/about">About</a></li>
         </ul>
       </nav>
 
     </div>
-  
+    <div class="dropdown" style="visibility: hidden;">
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#" style="display: list-item;">Link 1</a>
+        <a href="#" style="display: list-item;">Link 2</a>
+        <a href="#" style="display: list-item;">Link 3</a>
+      </div>
+    </div>
+
+    </header>
     <div class="SearchBar">
       <h1>Discover Chemistry</h1>
       <input id="search" type="text" onkeyup="myFunction2()" placeholder="Search by Keyword">
-        <div class="searchbtn">
-        </div>
+        <!-- <div class="searchbtn">
+        </div> -->
       </div>
-    </header>
-      
+
+      <div class="Fact">
+        <h1>Fact of the Week</h1>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+        </div>
+        </div>
+
       <div class="post-container">
+        
       <% for (var i = arr.length-1; i >= 0; i--) { %>
+        
+        <div id="<%= i %>" class="overlay">
+          <div id="text-box">
+            <button id="<%= [i] %>" onclick="off(this.id);" style="float: right;">X</button>
+            <h1 id="popup-id"><%= arr[i].title %></h1>
+            <h5>By <%= arr[i].author %></h5>
+            <p><%= arr[i].content %></p>
+          </div>
+        </div>
 
         <div class="Post">
-          <a class=pop href="#">View Pop up</a>
-          <a class=stay href="#">Same page</a>
-          <a class=new href="#" target="_blank">New link</a>
+          <a id="<%= [i] %>" class=pop onclick="on(this.id);" href="#">View Pop up</a>
+          <a class=stay href="/external?ID=<%= arr[i].id %>">Same page</a>
+          <a class=new href="/external?ID=<%= arr[i].id %>" target="_blank">New link</a>
           <h4 class="title"><%= arr[i].title %></h4>
-          <p><%= arr[i].content %></p>
+          <h5>By <%= arr[i].author %></h5>
+          <p style=" width: 600px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= arr[i].content %></p>
           
         </div>
         <hr style="visibility:hidden;">

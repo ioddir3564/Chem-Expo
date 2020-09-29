@@ -9,7 +9,6 @@ var sticky = navbar.offsetTop;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
-  console.log(sticky);
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
   } else {
@@ -25,6 +24,9 @@ function myFunction2(event) {
   
   var arr = []
   var word = ""
+  
+  // console.log(input.value);
+  // console.log(list);
   
   // Loop through all list items, and hide those who don't match the search query
   for (var i = 0; i < input.value.length; i++){
@@ -42,15 +44,18 @@ function myFunction2(event) {
       word = ""
     }
   }
-  console.log(arr);
+  // console.log(arr);
   var arr_post = []
   var title = ""
   var content = ""
   var tup = []
   word = ""
+  console.log(list[0].childNodes);
+  console.log(list[0].childNodes[7]);
   for (var i = 0; i < list.length; i++){
-    title = list[i].childNodes[1].innerHTML.toLowerCase()
-    content = list[i].childNodes[3].innerHTML.toLowerCase()
+    title = list[i].childNodes[7].innerHTML.toLowerCase()
+    author = list[i].childNodes[9].innerHTML.toLowerCase()
+    content = list[i].childNodes[11].innerHTML.toLowerCase()
     for (var t = 0; t < title.length; t++){
       if (t == title.length-1){
         word += title[t]
@@ -59,6 +64,20 @@ function myFunction2(event) {
       }
       else if (title[t] != " "){
         word += title[t]
+      }
+      else{
+        tup.push(word)
+        word = ""
+      }
+    }
+    for (var t = 0; t < author.length; t++){
+      if (t == author.length-1){
+        word += author[t]
+        tup.push(word)
+        word = ""
+      }
+      else if (author[t] != " "){
+        word += author[t]
       }
       else{
         tup.push(word)
@@ -83,11 +102,11 @@ function myFunction2(event) {
     arr_post.push([list[i], tup])
     tup = []
 }
-  console.log(arr_post);
+  // console.log(arr_post);
   var show = []
   for (var i = 0; i < arr_post.length; i++){
     var collection = arr_post[i][1]
-    console.log(collection);
+    // console.log(collection);
       for (var j = 0; j < arr.length; j++){
       if (collection.includes(arr[j])){
         if (!show.includes(arr_post[0])){
@@ -96,7 +115,7 @@ function myFunction2(event) {
       }
     }
   }
-  console.log(show);
+  // console.log(show);
 
   for (var i = 0; i < list.length; i++){
     if (show.length == 0){
@@ -111,7 +130,15 @@ function myFunction2(event) {
   }
 }
 
+function on(index) {
+  // console.log(index);
+  document.getElementById(index).style.display = "block";
 
+}
+
+function off(index) {
+  document.getElementById(index).style.display = "none";
+}
   // console.log("-");
   // console.log(arr_post[0][1][0].innerHTML);
   // console.log("-");

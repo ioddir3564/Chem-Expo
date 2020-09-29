@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const ejs = require('ejs')
 var session = require('client-sessions')
 const flash = require('connect-flash');
+const e = require('express')
+
 
 const app = express()
 
@@ -46,6 +48,11 @@ const connectDB = async() => {
 
 connectDB()
 
+// io.on('connection', socket => {
+//     socket.on("")
+// })
+
+
 app.get('/', function(req, res){
     var arr = []
     Post.find({}, function(err, postArr){
@@ -54,14 +61,38 @@ app.get('/', function(req, res){
         }
         else{
             arr = postArr
+            var index = 
             res.render('index', {arr: arr});
         }
     })
     
 })
 
+app.get('/external', function(req, res){
+    const id = req.query.ID
+    Post.findOne({_id : id}, function(err, foundPost){
+        if (err){
+            console.log(err);
+        }
+        else{
+            if (foundPost){
+                const post = foundPost
+                res.render("external", {post: post})
+            }
+        }
+    })
+})
+
 app.get('/history', function(req, res){
     res.render("history")
+})
+
+app.get('/resources', function(req, res){
+    res.render("resources")
+})
+
+app.get('/about', function(req, res){
+    res.render("about")
 })
 
 app.get('/admin', function(req,res){
