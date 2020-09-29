@@ -48,6 +48,12 @@ header {
       height: auto;
   }
 
+  .image:hover{
+      z-index: 1;
+      width: 60%;
+      height: auto;
+  }
+
   .description {
       font-size: medium;
       margin-left: auto;
