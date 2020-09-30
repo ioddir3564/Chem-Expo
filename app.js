@@ -30,6 +30,7 @@ const adminSchema = new mongoose.Schema({
 })
 
 const postSchema = new mongoose.Schema({
+    email: String,
     author: String,
     title: String,
     date: String,
@@ -101,7 +102,15 @@ app.get('/admin', function(req,res){
 
 app.get('/mission-control', function(req, res){
     if (req.session.user){
-        res.render('mission-control')
+        Post.find({email: req.session.user.email}, function(err, foundPosts){
+            if (err){
+                console.log(err);
+            }
+            else{
+                // console.log(foundPosts);
+                res.render('mission-control', {posts : foundPosts})
+            }
+        })
     }
     else{
         res.redirect("/admin")
@@ -145,6 +154,7 @@ app.post("/createPost", function(req,res){
     const content = req.body.content
 
     const newPost = new Post({
+        email: req.session.user.email,
         author: author,
         title: title,
         date: date,
@@ -156,9 +166,41 @@ app.post("/createPost", function(req,res){
             console.log(err);
         }
         else{
-            res.redirect("/")
+            res.redirect("/mission-control")
         }
     })
+})
+
+app.post("/save", function(req, res){
+    const updatedContent = req.body.updatedContent
+    const title = req.body.title
+    const author = req.body.author
+    const date = req.body.date
+    const postID = req.body.postID
+    console.log(postID);
+
+    Post.findOne({_id: postID}, function(err, foundPost){
+        if (err) {
+            console.log(err);
+        }
+        else{
+            if (foundPost) {
+                console.log("working");
+                console.log(foundPost);
+                foundPost.content = updatedContent;
+                foundPost.title = title;
+                foundPost.author = author;
+                foundPost.date = date;
+                foundPost.save()
+                res.redirect("/mission-control")
+            }
+            else{
+                console.log("not found");
+                res.redirect("/mission-control")
+            }
+        }
+    })
+    
 })
 
 
