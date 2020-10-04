@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Chem Expo</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     
 <div class="wrapper">
-  <img src="Chem expo logo.png" alt="logo" class="logo">
+  <img src="imgs/Chem expo logo.png" alt="logo" class="logo">
 </div>
 
   <header id="header1">
@@ -65,7 +65,7 @@
           <a class=stay href="/external?ID=<%= arr[i].id %>">Same page</a>
           <a class=new href="/external?ID=<%= arr[i].id %>" target="_blank">New link</a>
           <h4 class="title"><%= arr[i].title %></h4>
-          <img src="<%= arr[i].author %>pic.jpg" style="width: 10%; border-radius: 50%;" alt="">
+          <img src="imgs/<%= arr[i].author %>pic.jpg" style="width: 10%; border-radius: 50%;" alt="">
           <h5>By <%= arr[i].author %></h5>
           <p style=" width: 600px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= arr[i].content %></p>
           
@@ -76,4 +76,4 @@
   </body>
 </html>
 
-<script src="index.js" charset="utf-8"></script>
+<script src="js/index.js" charset="utf-8"></script>

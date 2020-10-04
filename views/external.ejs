@@ -3,19 +3,78 @@
   <head>
     <meta charset="utf-8">
     <title>Chem Expo</title>
-    <link rel="stylesheet" href="external.css">
+    <link rel="stylesheet" href="css/external.css">
   </head>
   <body>
 
 <div class="wrapper">
-  <img src="Chem expo logo.png" alt="logo" class="logo">
+  <img src="imgs/Chem expo logo.png" alt="logo" class="logo">
 </div>
 
 <h1 class="blogtitle"><%= post.title %> </h1>
 <h4 class="author"><%= post.author %> </h4>
 <div class="focuscontent"> 
-<p><%= post.content %> </p>
+<p id="cco"><%= post.content %> </p>
 </div>
 </body>
+
+<script>
+  var text = document.getElementById('cco').innerHTML
+  console.log(text);
+  document.getElementById('cco').remove()
+  console.log(text);
+  var i = 0;
+  var textContent = ''
+  while (i < text.length){
+    if (i == text.length-1){
+      if (textContent.length > 0){
+        var pElem = document.createElement('p')
+        pElem.innerHTML = textContent
+        document.querySelector(".focuscontent").appendChild(pElem);
+        textContent = ''
+      } 
+    }
+    if (text[i] == '^' && text[i+1] == '+'){
+      if (textContent.length > 0){
+        var pElem = document.createElement('p')
+        pElem.innerHTML = textContent
+        document.querySelector(".focuscontent").appendChild(pElem);
+        textContent = ''
+    }
+      var j = i+2;
+      var src = ''
+      var style = ''
+      while (text[j] != '+' && text[j+1] != '^'){
+        if (text[j] == '$'){
+          j++
+          while (text[j] != '+'){
+            style += text[j]
+            j++
+          }
+        }
+        else{
+          src += text[j]
+          j++
+        }
+      }
+      console.log(style);
+      console.log(src);
+      var imgElem = document.createElement('img');
+      console.log('first');
+      console.log(imgElem)
+      imgElem.src = src
+      imgElem.style = style
+      console.log('second');
+      console.log(imgElem);
+      console.log();
+      document.querySelector(".focuscontent").appendChild(imgElem);
+      i = (j+2);
+    }
+    else{
+      textContent += text[i]
+      i++
+    }
+  }
+</script>
 
 </html>

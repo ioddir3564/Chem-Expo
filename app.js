@@ -62,7 +62,6 @@ app.get('/', function(req, res){
         }
         else{
             arr = postArr
-            var index = 
             res.render('index', {arr: arr});
         }
     })

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Album example · Bootstrap</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
@@ -29,40 +29,12 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="mission-control.css" rel="stylesheet">
+    <link href="css/mission-control.css" rel="stylesheet">
   </head>
   <body>
-    <header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
-        </div>
-      </div>
+    <div class="wrapper">
+      <img src="imgs/Chem expo logo.png" alt="logo" class="logo">
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Album</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
 
 <main role="main">
     <div id="create" class="overlay">
@@ -73,25 +45,29 @@
         <label for="">Author</label>
         <input type="text" name="author">
         <br>
-        <label for="">Title</label>
-        <input type="text" name="title">
+        <label for="" class="input-label">Title</label>
+        <input type="text" class="input-box" name="title">
 <br>
-        <label for="">Date</label>
-        <input type="text" name="date">
+        <label for="" class="input-label">Date</label>
+        <input type="text" class="input-box" name="date">
 <br>
-        <label for="">Content</label>
-        <textarea name="content" cols="30" rows="10"></textarea>
+        <label for="" class="input-label">Content</label>
+        <textarea name="content" cols="100" rows="10"></textarea>
         <button type="submit">Post</button>
     </form>
 </div>
       </div>
   <section class="jumbotron text-center">
     <div class="container">
-      <h1>Album example</h1>
-      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+      <h1>Your Posts</h1>
+      <p class="lead text-muted">Welcome to your admin dashboard! You may add, remove, or edit any posts here.</p> 
+      <hr>
+      <p class="lead text-muted">To add images use " ^+img_url+^ ". To add styling, insert $ and divide each style with ";" before the closing "+^".</p>
+      <hr> 
+      <p class="lead text-muted">Example: ^+https://images.pexels.com/photos/5192248$height:200px;+^</p>
+      </p>
       <p>
         <a onclick="on();" href="#" class="btn btn-primary my-2">Create Blog Post</a>
-        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
       </p>
     </div>
   </section>
@@ -124,10 +100,10 @@
               <p class="card-text" style=" width: 600px;white-space: nowrap;overflow: hidden;text-overflow:unset; padding-right: 2px;"><%= posts[i].content %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  
                   <button id="<%= i %>" onclick="edit(this.id);" type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted">9 mins</small>
+          
               </div>
             </div>
           </div>
@@ -151,8 +127,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     
 <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
-<script src="mission-control.js" charset="utf-8"></script>
+<script src="js/mission-control.js" charset="utf-8"></script>
 </body>
+
       
 </html>
 
