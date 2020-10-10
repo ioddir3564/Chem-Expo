@@ -98,6 +98,7 @@ app.get('/about', function(req, res){
 })
 
 app.get('/admin', function(req,res){
+    console.log(process.env.API_KEY);
     res.render('admin')
 })
 
