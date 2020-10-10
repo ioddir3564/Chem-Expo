@@ -57,16 +57,17 @@ connectDB()
 
 
 app.get('/', function(req, res){
-    var arr = []
-    Post.find({}, function(err, postArr){
-        if (err){
-            console.log(err)
-        }
-        else{
-            arr = postArr
-            res.render('index', {arr: arr});
-        }
-    })
+    // var arr = []
+    // Post.find({}, function(err, postArr){
+    //     if (err){
+    //         console.log(err)
+    //     }
+    //     else{
+    //         arr = postArr
+    //         res.render('index', {arr: arr});
+    //     }
+    // })
+    res.render("about")
     
 })
 
