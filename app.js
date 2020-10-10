@@ -207,7 +207,7 @@ app.post("/save", function(req, res){
 })
 
 
-app.listen(8000, function(){
+app.listen(process.env.PORT, function(){
     console.log("server is on 8000");
 })
 
