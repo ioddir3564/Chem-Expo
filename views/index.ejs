@@ -17,7 +17,7 @@
       <nav>
         <ul>
           <li><a id="current" href="#">Blog</a></li>
-          <li><a class="others" href="/history">History</a></li> 
+          <li><a class="others" href="#">History</a></li> 
           <li id="courses"><a class="others" href="#">Courses</a></li>
           <li><a class="others" href="/resources">Resources</a></li>
           <li><a class="others" href="/about">About</a></li>
@@ -56,7 +56,9 @@
             <button id="<%= [i] %>" onclick="off(this.id);" style="float: right;">X</button>
             <h1 id="popup-id"><%= arr[i].title %></h1>
             <h5>By <%= arr[i].author %></h5>
-            <p><%= arr[i].content %></p>
+            <div class="focuscontent"> 
+            <p id="cco"><%= arr[i].content %></p>
+            </div>
           </div>
         </div>
 
@@ -65,9 +67,11 @@
           <a class=stay href="/external?ID=<%= arr[i].id %>">Same page</a>
           <a class=new href="/external?ID=<%= arr[i].id %>" target="_blank">New link</a>
           <h4 class="title"><%= arr[i].title %></h4>
+          
           <img src="imgs/<%= arr[i].author %>pic.jpg" style="width: 10%; border-radius: 50%;" alt="">
           <h5>By <%= arr[i].author %></h5>
-          <p style=" width: 600px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= arr[i].content %></p>
+          <img class="cover-img" src="<%= arr[i].mainImg %>" alt="">
+          <p style=" width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= arr[i].content %></p>
           
         </div>
         <hr style="visibility:hidden;">
@@ -75,5 +79,64 @@
       </div>
   </body>
 </html>
+
+<script>
+  var text = document.getElementById('cco').innerHTML
+  console.log(text);
+  document.getElementById('cco').remove()
+  console.log(text);
+  var i = 0;
+  var textContent = ''
+  while (i < text.length){
+    if (i == text.length-1){
+      if (textContent.length > 0){
+        var pElem = document.createElement('p')
+        pElem.innerHTML = textContent
+        document.querySelector(".focuscontent").appendChild(pElem);
+        textContent = ''
+      } 
+    }
+    if (text[i] == '^' && text[i+1] == '+'){
+      if (textContent.length > 0){
+        var pElem = document.createElement('p')
+        pElem.innerHTML = textContent
+        document.querySelector(".focuscontent").appendChild(pElem);
+        textContent = ''
+    }
+      var j = i+2;
+      var src = ''
+      var style = ''
+      while (text[j] != '+' && text[j+1] != '^'){
+        if (text[j] == '$'){
+          j++
+          while (text[j] != '+'){
+            style += text[j]
+            j++
+          }
+        }
+        else{
+          src += text[j]
+          j++
+        }
+      }
+      console.log(style);
+      console.log(src);
+      var imgElem = document.createElement('img');
+      console.log('first');
+      console.log(imgElem)
+      imgElem.src = src
+      imgElem.style = style
+      console.log('second');
+      console.log(imgElem);
+      console.log();
+      document.querySelector(".focuscontent").appendChild(imgElem);
+      i = (j+2);
+    }
+    else{
+      textContent += text[i]
+      i++
+    }
+  }
+</script>
 
 <script src="js/index.js" charset="utf-8"></script>

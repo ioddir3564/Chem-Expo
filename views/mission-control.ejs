@@ -45,6 +45,9 @@
         <label for="">Author</label>
         <input type="text" name="author">
         <br>
+        <label for="" class="input-label">Cover Image</label>
+        <input type="text" class="input-box" name="mainImg">
+        <br>
         <label for="" class="input-label">Title</label>
         <input type="text" class="input-box" name="title">
 <br>
@@ -66,6 +69,8 @@
       <hr> 
       <p class="lead text-muted">Example: ^+https://images.pexels.com/photos/5192248$height:200px;+^</p>
       </p>
+      <hr>
+      <p class="lead text-muted">For author field, just put your first name wit first letter capitalized, or else your image won't show in your post.</p>
       <p>
         <a onclick="on();" href="#" class="btn btn-primary my-2">Create Blog Post</a>
       </p>
@@ -79,7 +84,7 @@
         <% for (var i = posts.length-1; i >= 0; i--) { %>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png" alt="">
+            <img style="width: 100%; height: 20%;" src="<%= posts[i].mainImg %> " alt="">
             <form id="<%= i %>" class="edit-content" action="/save" method="POST">
             <label >Title</label>
             <input type="text" name="title" value="<%= posts[i].title %>">
@@ -90,6 +95,7 @@
             <br>
             <label>Author</label>
             <input type="text" name="author" value="<%= posts[i].author %>">
+  
             <textarea name="updatedContent" cols="30" rows="10"><%= posts[i].content %></textarea>
             <h1 style="font-size: small;">The id of this post is: <%= posts[i]._id %> Please enter it in the following box and press save to confirm save.</h1>
             <input type="text" name="postID" required>
@@ -97,7 +103,7 @@
         </form>
             <div class="card-body">
                 <h1><%= posts[i].title %></h1>
-              <p class="card-text" style=" width: 600px;white-space: nowrap;overflow: hidden;text-overflow:unset; padding-right: 2px;"><%= posts[i].content %></p>
+              <p class="card-text" style=" width: 100%;white-space: nowrap;overflow: hidden;text-overflow:unset; padding-right: 2px;"><%= posts[i].content %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   
@@ -120,8 +126,8 @@
     <p class="float-right">
       <a href="#">Back to top</a>
     </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.5/getting-started/introduction/">getting started guide</a>.</p>
+    <p>Have fun in sharing your chemistry knowledge!</p>
+    <p>&copy; Chem Expo</p>
   </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -134,32 +140,3 @@
 </html>
 
 
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
-</head>
-<body>
-    <h1>Create Post</h1>
-    <form action="/createPost" method="POST">
-        <label for="">Author</label>
-        <input type="text" name="author">
-        <br>
-        <label for="">Title</label>
-        <input type="text" name="title">
-<br>
-        <label for="">Date</label>
-        <input type="text" name="date">
-<br>
-        <label for="">Content</label>
-        <textarea name="content" cols="30" rows="10"></textarea>
-        <button type="submit">Post</button>
-    </form>
-</body>
-</html> -->

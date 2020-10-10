@@ -5,6 +5,7 @@ const ejs = require('ejs')
 var session = require('client-sessions')
 const flash = require('connect-flash');
 const e = require('express')
+require("dotenv").config()
 
 
 const app = express()
@@ -31,6 +32,7 @@ const adminSchema = new mongoose.Schema({
 
 const postSchema = new mongoose.Schema({
     email: String,
+    mainImg: String,
     author: String,
     title: String,
     date: String,
@@ -40,7 +42,7 @@ const postSchema = new mongoose.Schema({
 const Admin = new mongoose.model("Admin", adminSchema)
 const Post = new mongoose.model("Post", postSchema)
 
-const URI = "mongodb+srv://Irfaz:Iz012789@cluster0.tyfbo.mongodb.net/chem?retryWrites=true&w=majority"
+const URI = process.env.API_KEY
 
 const connectDB = async() => {
     await mongoose.connect(URI, {useUnifiedTopology: true, useNewUrlParser: true})
@@ -148,12 +150,14 @@ app.post('/admin', function(req, res){
 
 app.post("/createPost", function(req,res){
     const author = req.body.author
+    const mainImg = req.body.mainImg
     const title = req.body.title
     const date = req.body.date
     const content = req.body.content
 
     const newPost = new Post({
         email: req.session.user.email,
+        mainImg: mainImg,
         author: author,
         title: title,
         date: date,
