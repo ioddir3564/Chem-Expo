@@ -99,8 +99,9 @@ app.get('/about', function(req, res){
 
 app.get('/admin', function(req,res){
     console.log(process.env.API_KEY);
-    Admin.findOne({}, function(err, arr){
+    Admin.find({}, function(err, arr){
         if (err){
+            console.log("hey");
             console.log(err);
         }
         else{
