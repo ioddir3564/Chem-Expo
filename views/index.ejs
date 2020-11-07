@@ -22,8 +22,8 @@
           <li><a class="others" href="/resources">Resources</a></li>
           <li><a class="others" href="/about">About</a></li>
         </ul>
+        
       </nav>
-
     </div>
     <div class="dropdown" style="visibility: hidden;">
       <div id="myDropdown" class="dropdown-content">
@@ -34,6 +34,7 @@
     </div>
 
     </header>
+    <a id="mode-color" href="/?mode=dark" class="mode">Dark Mode</a>
     <div class="SearchBar">
       <h1>Discover Chemistry</h1>
       <input id="search" type="text" onkeyup="myFunction2()" placeholder="Search by Keyword">
@@ -81,6 +82,23 @@
 </html>
 
 <script>
+  
+  var url = window.location.search
+  
+  
+  console.log(url);
+  
+  if (url == "?mode=dark"){
+    console.log("bchange");
+    document.body.style.background = "#232323";
+    document.querySelector("#mode-color").classList.remove("mode")
+    document.querySelector("#mode-color").classList.add("mode1")
+    document.querySelector("#mode-color").innerHTML = "Light Mode"
+    document.querySelector("#mode-color").href = "/";
+  }
+  
+
+
   var text = document.getElementById('cco').innerHTML
   console.log(text);
   document.getElementById('cco').remove()

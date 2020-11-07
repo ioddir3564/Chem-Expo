@@ -20,9 +20,7 @@
 
 <script>
   var text = document.getElementById('cco').innerHTML
-  console.log(text);
   document.getElementById('cco').remove()
-  console.log(text);
   var i = 0;
   var textContent = ''
   while (i < text.length){
@@ -57,17 +55,41 @@
           j++
         }
       }
-      console.log(style);
-      console.log(src);
       var imgElem = document.createElement('img');
-      console.log('first');
-      console.log(imgElem)
       imgElem.src = src
       imgElem.style = style
-      console.log('second');
-      console.log(imgElem);
-      console.log();
       document.querySelector(".focuscontent").appendChild(imgElem);
+      i = (j+2);
+    }
+    else if (text[i] == '!' && text[i+1] == '@'){
+      if (textContent.length > 0){
+        var pElem = document.createElement('p')
+        pElem.innerHTML = textContent
+        document.querySelector(".focuscontent").appendChild(pElem);
+        textContent = ''
+      }
+      var j = i+2;
+      var src = ''
+      var style = ''
+      while (text[j] != '@' && text[j+1] != '!'){
+        if (text[j] == '$'){
+          j++
+          while (text[j] != '@'){
+            style += text[j]
+            j++
+          }
+        }
+        else{
+          src += text[j]
+          j++
+        }
+      }
+      var vidElem = document.createElement('IFRAME');
+      vidElem.setAttribute("src", src)
+      vidElem.style = style
+      vidElem.style.border = "none"
+      vidElem.setAttribute('allowFullScreen', '')
+      document.querySelector(".focuscontent").appendChild(vidElem);
       i = (j+2);
     }
     else{

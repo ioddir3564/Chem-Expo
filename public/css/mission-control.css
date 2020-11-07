@@ -11,6 +11,9 @@
     }
   }
   
+*, ::after, ::before {
+  box-sizing: unset;
+}
   .jumbotron p:last-child {
     margin-bottom: 0;
   }
@@ -20,7 +23,7 @@
   }
   
   .jumbotron .container {
-    max-width: 40rem;
+    width: 100%;
   }
   
   footer {
@@ -80,3 +83,10 @@
     width: 20%;
   }
 
+.column {
+  display: inline-block;
+  width: 20%;
+  height: 100px;
+  text-align: center;
+  padding: 20px;
+}

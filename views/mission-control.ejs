@@ -63,18 +63,23 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1>Your Posts</h1>
+      <div class="column" style="position: relative; top: -30px; border-right: 1px solid black; padding-bottom: 70px;">
       <p class="lead text-muted">Welcome to your admin dashboard! You may add, remove, or edit any posts here.</p> 
-      <hr>
-      <p class="lead text-muted">To add images use " ^+img_url+^ ". To add styling, insert $ and divide each style with ";" before the closing "+^".</p>
-      <hr> 
-      <p class="lead text-muted">Example: ^+https://images.pexels.com/photos/5192248$height:200px;+^</p>
-      </p>
-      <hr>
-      <p class="lead text-muted">For author field, just put your first name wit first letter capitalized, or else your image won't show in your post.</p>
-      <p>
-        <a onclick="on();" href="#" class="btn btn-primary my-2">Create Blog Post</a>
-      </p>
     </div>
+    
+    <div class="column" style="border-right: 1px solid black; padding-bottom: 70px;">
+      <p class="lead text-muted">For author field, just put your first name wit first letter capitalized, or else your image won't show in your post.</p>
+    </div>
+
+    <div class="column" style="border-right: 1px solid black; padding-bottom: 70px;">
+      <p class="lead text-muted">To add images use " ^+img_url+^ ". To add styling, insert $ and divide each style with ";" before the closing "+^".</p>
+      </div>
+      <div class="column" style="position: relative; top: -89px;">
+        <p class="lead text-muted">Example: ^+https://images.pexels.com/photos/5192248$height:200px;+^</p>
+      </div>
+      
+    </div>
+    <a onclick="on();" href="#" class="btn btn-primary my-2">Create Blog Post</a>
   </section>
 
   <div class="album py-5 bg-light">
