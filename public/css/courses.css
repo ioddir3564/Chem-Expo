@@ -1,0 +1,367 @@
+body {
+    margin: 0;
+    background: #F5F5F5;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .logo {
+    width: 10%;
+  
+  }
+  
+  .pop {
+    border: solid black;
+    border-width: 1px;
+    padding: 5px;
+    float: right;
+    margin-right: 5%;
+    text-decoration: none;
+    margin-inline: auto;
+  }
+  .pop:hover{
+    color: white;
+    background-color:rgb(86, 195, 91);;
+  }
+  .stay {
+  
+    border: solid black;
+    border-width: 1px;
+    padding: 5px;
+    float: right;
+    margin-right: 5%;
+    text-decoration: none;
+    margin-inline: auto;
+  }
+  .stay:hover{
+    color: white;
+    background-color: rgb(86, 195, 91);
+  }
+  .new {
+    border: solid black;
+    border-width: 1px;
+    padding: 5px;
+    float: right;
+    margin-right: 5%;
+    text-decoration: none;
+    margin-inline: auto;
+  }
+  .new:hover{
+    color: white;
+    background-color:rgb(86, 195, 91);;
+  }
+  
+  .title {
+    font-size: 300%;
+  }
+  
+  .container1 {
+    width: 100%;
+    background: #cbe8b5;
+    
+  }
+  
+  .wrapper {
+    width: 100%;
+    background: #77ba40;
+    text-align: center;
+  }
+  
+  
+  header {
+    /* background: #3CB371; */
+    height: auto;
+    text-align: center;
+  
+  }
+  
+  .SearchBar {
+    /* padding: 20px 100px 10px 100px; */
+    position: fixed;
+    margin-left: 13%;
+    top: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 20%;
+    background: white;
+    text-align: center;
+    font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+  
+  .mode {
+    position: fixed;
+    margin-left: 13%;
+    top: 240px;
+    text-decoration: none;
+    padding-top: 10px;
+    color:white;
+    padding-bottom: 10px;
+    width: 10%;
+    background: black;
+    text-align: center;
+    font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .mode:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .mode:active {
+    color: #000
+  }
+  
+  .mode:active:after {
+    background: transparent;
+  }
+  
+  .mode:hover:before {
+    opacity: 1;
+  }
+  
+  .mode:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  .mode1 {
+    position: fixed;
+    margin-left: 13%;
+    top: 240px;
+    text-decoration: none;
+    padding-top: 10px;
+    color:black;
+    padding-bottom: 10px;
+    width: 10%;
+    background: black;
+    text-align: center;
+    font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .mode1:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .mode1:active {
+    color: black;
+  }
+  
+  .mode1:active:after {
+    background: transparent;
+  }
+  
+  .mode1:hover:before {
+    opacity: 1;
+  }
+  
+  .mode1:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+  }
+  
+  .Fact {
+    max-height: 20%;
+    padding: 50px 50px 100px 50px;
+    overflow-y: scroll;
+    position: fixed;
+    margin-left: 13%;
+    top: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 20%;
+    background: white;
+    text-align: center;
+    font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+  
+  .Blog {
+    text-align: left;
+    text-align: bottom;
+  }
+  
+  .Post {
+    padding: 50px 100px 100px 100px;
+    width: 60%;
+    background-color: white;
+    text-align: left;
+    border: solid black;
+    border-width: 0;
+    border-radius: 3px;
+    margin-left: 64%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+  
+  .cover-img{
+    width: 20%;
+  }
+  
+  .post-container{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 15%;
+    
+  
+  
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  nav ul {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin: 30px 1%;
+    padding-top: 5px;
+  }
+  
+  .others {
+    color: #444;
+    padding: 10px;
+    text-decoration: none;
+    
+  }
+  .others:hover {
+    border-radius: 3px;
+    border-width: 1px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(86, 195, 91);
+  }
+  
+  #current {
+    /* border: solid black;
+    border-radius: 5px; */
+    font-weight: bold;
+    text-decoration: none;
+    /* background-color: red; */
+  }
+  
+  .overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  
+  #text-box{
+    padding: 20px;
+    height: 90%;
+    width: 50%;
+    overflow-y: scroll;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: black;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    
+  }
+  
+  #regents {
+      padding: 200px;
+      padding-top: 100px;
+  }
+
+  #ap{
+      padding: 200px;
+      padding-top: 100px;
+  }
+
+  .current {
+      background-color: bisque;
+      padding: 5px;
+      border-radius: 5px;
+      border-width: 1px;
+  }
+
+  .btn1{
+      padding: 5px;
+      border-radius: 5px;
+      border-width: 1px;
+  }
+
+  .btn1:hover{
+      background-color: black;
+      color: white;
+  }

@@ -17,8 +17,8 @@
       <nav>
         <ul>
           <li><a id="current" href="#">Blog</a></li>
-          <li><a class="others" href="#">History</a></li> 
-          <li id="courses"><a class="others" href="#">Courses</a></li>
+          <li><a class="others" href="/history">History</a></li> 
+          <li id="courses"><a class="others" href="/courses">Courses</a></li>
           <li><a class="others" href="/resources">Resources</a></li>
           <li><a class="others" href="/about">About</a></li>
         </ul>
@@ -69,7 +69,7 @@
           <a class=new href="/external?ID=<%= arr[i].id %>" target="_blank">New link</a>
           <h4 class="title"><%= arr[i].title %></h4>
           
-          <img src="imgs/<%= arr[i].author %>pic.jpg" style="width: 10%; border-radius: 50%;" alt="">
+          <img src="imgs/<%= arr[i].author.toLowerCase() %>pic.jpg" style="width: 10%; border-radius: 50%;" alt="">
           <h5>By <%= arr[i].author %></h5>
           <img class="cover-img" src="<%= arr[i].mainImg %>" alt="">
           <p style=" width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= arr[i].content %></p>

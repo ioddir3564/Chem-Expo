@@ -77,3 +77,8 @@ body {
     background-color: rgb(86, 195, 91);
   }
 
+  .oddir {
+    margin-left: 30%;
+    height: 75px;
+    border-radius: 50%;
+  }

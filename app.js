@@ -79,7 +79,23 @@ app.get('/external', function(req, res){
         else{
             if (foundPost){
                 const post = foundPost
-                res.render("external", {post: post})
+                
+                var first = ""
+                var i = 0
+                while (post.author[i] != " "){
+                    if (i == post.author.length-1){
+                        first += post.author[i]
+                        break
+                    }
+                    first += post.author[i]
+                    i++
+                }
+                first = first.toLowerCase()
+                console.log(first);
+                var fNameObj = {
+                    name: first
+                }
+                res.render("external", {post: post, fNameObj: fNameObj})
             }
         }
     })
@@ -95,6 +111,10 @@ app.get('/resources', function(req, res){
 
 app.get('/about', function(req, res){
     res.render("about")
+})
+
+app.get('/courses', function(req, res){
+    res.render("courses")
 })
 
 app.get('/admin', function(req,res){
@@ -205,6 +225,7 @@ app.post("/save", function(req, res){
     })
     
 })
+
 
 
 app.listen(8000, function(){
