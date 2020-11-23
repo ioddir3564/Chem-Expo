@@ -39,9 +39,38 @@
     <div id="ap">
         <h1>AP Chemistry</h1>
     </div>
-    
-    
-    
+
+    <div class="chapters">
+        <h2>Chapters</h2>
+        <hr class="space">
+        <button id="0" class="section" onclick="chapterSelect(this);">Chapter 1</button> 
+        <hr class="space">
+        <button id="1" class="section" onclick="chapterSelect(this);">Chapter 2</button>
+        <hr class="space">
+        <button id="2" class="section" onclick="chapterSelect(this);">Chapter 3</button>
+        <hr class="space">
+        <button id="3" class="section" onclick="chapterSelect(this);">Chapter 4</button>
+        <hr class="space">
+        <button id="4" class="section" onclick="chapterSelect(this);">Chapter 5</button>
+        <hr class="space">
+    </div>
+    <div id="chapter-div">
+        <div class="chapter">
+            Chapter 1
+        </div>
+        <div class="chapter">
+            Chapter 2
+        </div>
+        <div class="chapter">
+            Chapter 3
+        </div>
+        <div class="chapter">
+            Chapter 4
+        </div>
+        <div class="chapter">
+            Chapter 5
+        </div>
+    </div>    
 </body>
 
 <script>
@@ -49,6 +78,24 @@
     var ap=document.querySelector("#ap")
     var regBtn = document.querySelector("#reg-btn")
     var apBtn = document.querySelector("#ap-btn")
+    var list = document.getElementById("chapter-div").querySelectorAll(".chapter")
+    list[0].style.display = "block"
+    for (var i = 1; i < list.length; i++){
+            list[i].style.display = "none"
+        }
+    function chapterSelect(btnElem){
+        console.log(list);
+        console.log(btnElem.id);
+        for (var i = 0; i < list.length; i++){
+            if (i == btnElem.id){
+                list[i].style.display = "block"
+            }
+            else{
+                list[i].style.display = "none"
+            }
+        }
+    }
+
     function showReg() {
         reg.style.display="block"
         ap.style.display="none"

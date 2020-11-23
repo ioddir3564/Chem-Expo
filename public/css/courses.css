@@ -365,3 +365,23 @@ body {
       background-color: black;
       color: white;
   }
+
+  .chapters {
+      margin-left: 5%;
+  }
+
+  .section {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border-width: 1px;
+  }
+
+  .section:hover {
+      background-color: tomato;
+  }
+
+  .space {
+      height: 50%;
+      visibility: hidden;
+  }
