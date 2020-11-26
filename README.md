@@ -12,7 +12,7 @@ Goals:
 
 1) add chapters to courses: 
   - on the left, have a fixed div with chapter buttons and on the right have interchanging chapter divs
-2) delete post functionality 
+2) delete post functionality - check
 3) main image field
 4) History (possibly remove history)
 5) Make chem expo tutorial 
