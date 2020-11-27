@@ -42,7 +42,7 @@ const postSchema = new mongoose.Schema({
 const Admin = new mongoose.model("Admin", adminSchema)
 const Post = new mongoose.model("Post", postSchema)
 
-const URI = "mongodb+srv://isfar:Ir012789@cluster0.tyfbo.mongodb.net/chem-testing?retryWrites=true&w=majority"
+const URI = process.env.API_KEY
 
 const connectDB = async() => {
     await mongoose.connect(URI, {useUnifiedTopology: true, useNewUrlParser: true})
@@ -238,7 +238,7 @@ app.post("/save", function(req, res){
 
 
 
-app.listen(8000, function(){
+app.listen(process.env.PORT, function(){
     console.log("server is on 8000");
 })
 
