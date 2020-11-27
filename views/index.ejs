@@ -9,6 +9,11 @@
     
 <div class="wrapper">
   <img src="imgs/Chem expo logo.png" alt="logo" class="logo">
+  <div class="intro">
+    <marquee behavior="scroll" direction="left" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 2px;">Welcome to Chem Expo! In this website, you can read different, remarkable articles related to chemistry. You may also study here by taking a look at our Regents Chemistry and AP Chemistry notes through each chapter (still being updated throughout the year). You may also check out our resources where we have the reference tables you need for both courses, and there is also a hyperlink that redirects you to a molecule maker!</marquee>
+  </div>
 </div>
 
   <header id="header1">
@@ -16,11 +21,18 @@
 
       <nav>
         <ul>
-          <li><a id="current" href="#">Blog</a></li>
-          <li><a class="others" href="/history">History</a></li> 
-          <li id="courses"><a class="others" href="/courses">Courses</a></li>
-          <li><a class="others" href="/resources">Resources</a></li>
-          <li><a class="others" href="/about">About</a></li>
+          <li><a id="current" href="#" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: normal;
+            letter-spacing: 2px;">Blog</a></li>
+          <li id="courses"><a style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: normal;
+            letter-spacing: 2px;" class="others" href="/courses">Courses</a></li>
+          <li><a class="others" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: normal;
+            letter-spacing: 2px;" href="/resources">Resources</a></li>
+          <li><a class="others" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: normal;
+            letter-spacing: 2px;" href="/about">About</a></li>
         </ul>
         
       </nav>
@@ -36,15 +48,21 @@
     </header>
     <a id="mode-color" href="/?mode=dark" class="mode">Dark Mode</a>
     <div class="SearchBar">
-      <h1>Discover Chemistry</h1>
+      <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: lighter;
+      letter-spacing: 2px;">Discover Chemistry</h1>
       <input id="search" type="text" onkeyup="myFunction2()" placeholder="Search by Keyword">
         <!-- <div class="searchbtn">
         </div> -->
       </div>
 
       <div class="Fact">
-        <h1>Fact of the Week</h1>
-        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+        <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: lighter;
+        letter-spacing: 2px;">Fact of the Week</h1>
+        <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: lighter;
+        letter-spacing: 2px;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
         </div>
         </div>
 
@@ -60,6 +78,7 @@
             <div class="focuscontent"> 
             <p id="cco"><%= arr[i].content %></p>
             </div>
+            <h1>Hey</h1>
           </div>
         </div>
 
@@ -72,7 +91,8 @@
           <img src="imgs/<%= arr[i].author.toLowerCase() %>pic.jpg" style="width: 10%; border-radius: 50%;" alt="">
           <h5>By <%= arr[i].author %></h5>
           <img class="cover-img" src="<%= arr[i].mainImg %>" alt="">
-          <p style=" width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= arr[i].content %></p>
+          <p style=" width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          font-weight: lighter;"><%= arr[i].content %></p>
           
         </div>
         <hr style="visibility:hidden;">
@@ -100,14 +120,17 @@
 
 
   var text = document.getElementById('cco').innerHTML
+  console.log('text1');
   console.log(text);
   document.getElementById('cco').remove()
+  console.log('text2');
   console.log(text);
   var i = 0;
   var textContent = ''
   while (i < text.length){
     if (i == text.length-1){
       if (textContent.length > 0){
+        textContent += text[i]
         var pElem = document.createElement('p')
         pElem.innerHTML = textContent
         document.querySelector(".focuscontent").appendChild(pElem);

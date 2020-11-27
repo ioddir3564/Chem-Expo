@@ -14,6 +14,8 @@
 <h1 class="blogtitle"><%= post.title %> </h1>
 <img class="oddir" src="imgs/<%= fNameObj.name %>pic.jpg"  alt="">
 <h4 class="author"><%= post.author %> </h4>
+<h1 id="mainImg-h1" style="display: none;"><%= post.mainImg %></h1>
+<img id="mainImg" style="height: 200px; margin-left: 30%;" src="<%= post.mainImg %> " alt="">
 <div class="focuscontent"> 
 <p id="cco"><%= post.content %> </p>
 </div>
@@ -97,6 +99,14 @@
       textContent += text[i]
       i++
     }
+  }
+  var mainImgH1 = document.getElementById('mainImg-h1')
+  console.log(mainImgH1);
+  var mainImg = document.getElementById('mainImg')
+  console.log(mainImg);
+  // console.log(mainImg.src);
+  if (mainImgH1.innerHTML == ''){
+    mainImg.style.display = 'none'
   }
 </script>
 

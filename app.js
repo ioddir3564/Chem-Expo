@@ -101,9 +101,6 @@ app.get('/external', function(req, res){
     })
 })
 
-app.get('/history', function(req, res){
-    res.render("history")
-})
 
 app.get('/resources', function(req, res){
     res.render("resources")
@@ -164,6 +161,19 @@ app.post('/admin', function(req, res){
                 req.flash('message', "Doesn't look like a user with this email exists")
                 res.redirect('/admin')
             }
+        }
+    })
+})
+
+app.post("/delete", function(req, res){
+    const postID = req.body.postID
+    Post.deleteOne({_id: postID}, function(err){
+        if (err){
+            console.log(err);
+        }
+        else{
+            console.log("delete successful");
+            res.redirect('/mission-control')
         }
     })
 })

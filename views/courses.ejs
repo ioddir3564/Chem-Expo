@@ -16,11 +16,16 @@
 
         <nav>
             <ul>
-              <li><a class="others" href="/">Blog</a></li>
-              <li><a class="others" href="/history">History</a></li> 
+              <li><a class="others" href="/" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: normal;
+                letter-spacing: 2px;">Blog</a></li>
               <li id="courses"><a id="current" href="/courses">Courses</a></li>
-              <li><a class="others" href="/resources">Resources</a></li>
-              <li><a class="others" href="/about">About</a></li>
+              <li><a class="others" href="/resources" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: normal;
+                letter-spacing: 2px;">Resources</a></li>
+              <li><a class="others" href="/about" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: normal;
+                letter-spacing: 2px;">About</a></li>
             </ul>
             
           </nav>
@@ -34,43 +39,75 @@
 </div>
     <div id="regents">
         <h1>Regents Chemistry</h1>
+        <div class="chapters">
+            <h2>Chapters</h2>
+            <hr class="space">
+            <button id="0" class="section" onclick="chapterSelect(this);">Chapter 1</button> 
+            <hr class="space">
+            <button id="1" class="section" onclick="chapterSelect(this);">Chapter 2</button>
+            <hr class="space">
+            <button id="2" class="section" onclick="chapterSelect(this);">Chapter 3</button>
+            <hr class="space">
+            <button id="3" class="section" onclick="chapterSelect(this);">Chapter 4</button>
+            <hr class="space">
+            <button id="4" class="section" onclick="chapterSelect(this);">Chapter 5</button>
+            <hr class="space">
+        </div>
+        <div id="chapter-div">
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 1</h1>
+            </div>
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 2</h1>
+            </div>
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 3</h1>
+            </div>
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 4</h1>
+            </div>
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 5</h1>
+            </div>
+        </div>   
     </div>
 
     <div id="ap">
         <h1>AP Chemistry</h1>
+        <div class="chapters">
+            <h2>Chapters</h2>
+            <hr class="space">
+            <button id="0" class="section" onclick="chapterSelect(this);">Chapter 1</button> 
+            <hr class="space">
+            <button id="1" class="section" onclick="chapterSelect(this);">Chapter 2</button>
+            <hr class="space">
+            <button id="2" class="section" onclick="chapterSelect(this);">Chapter 3</button>
+            <hr class="space">
+            <button id="3" class="section" onclick="chapterSelect(this);">Chapter 4</button>
+            <hr class="space">
+            <button id="4" class="section" onclick="chapterSelect(this);">Chapter 5</button>
+            <hr class="space">
+        </div>
+        <div id="chapter-div">
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 1</h1>
+            </div>
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 2</h1>
+            </div>
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 3</h1>
+            </div>
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 4</h1>
+            </div>
+            <div class="chapter">
+                <h1 class="chapter-title">Chapter 5</h1>
+            </div>
+        </div>   
     </div>
 
-    <div class="chapters">
-        <h2>Chapters</h2>
-        <hr class="space">
-        <button id="0" class="section" onclick="chapterSelect(this);">Chapter 1</button> 
-        <hr class="space">
-        <button id="1" class="section" onclick="chapterSelect(this);">Chapter 2</button>
-        <hr class="space">
-        <button id="2" class="section" onclick="chapterSelect(this);">Chapter 3</button>
-        <hr class="space">
-        <button id="3" class="section" onclick="chapterSelect(this);">Chapter 4</button>
-        <hr class="space">
-        <button id="4" class="section" onclick="chapterSelect(this);">Chapter 5</button>
-        <hr class="space">
-    </div>
-    <div id="chapter-div">
-        <div class="chapter">
-            Chapter 1
-        </div>
-        <div class="chapter">
-            Chapter 2
-        </div>
-        <div class="chapter">
-            Chapter 3
-        </div>
-        <div class="chapter">
-            Chapter 4
-        </div>
-        <div class="chapter">
-            Chapter 5
-        </div>
-    </div>    
+      
 </body>
 
 <script>

@@ -11,8 +11,25 @@ html {
 }
 
 .logo {
-  width: 10%;
+  width: 8%;
+  margin-left: 20px;
+  transform: skew(20deg);
+  position: relative;
+  animation: move 2s infinite;
+}
 
+@keyframes move {
+  0% {box-shadow: 0; left: 0; bottom: 0;}
+  10% {box-shadow: -10px 2px 2px 1px #006400; left: 2px; bottom: 2px;}
+  20% {box-shadow: -10px 4px 4px 1px #006400; left: 4px; bottom: 4px;}
+  30% {box-shadow: -10px 6px 6px 1px #006400; left: 6px; bottom: 6px;}
+  40% {box-shadow: -10px 8px 8px 1px #006400; left: 8px; bottom: 8px;}
+  /* 50% {box-shadow: 0; top: 10px; bottom: 10px;} */
+  60% {box-shadow: -10px 8px 8px 1px #006400; left: 8px; bottom: 8px;}
+  70% {box-shadow: -10px 6px 6px 1px #006400; left: 6px; bottom: 6px;}
+  80% {box-shadow: -10px 4px 4px 1px #006400; left: 4px; bottom: 4px;}
+  90% {box-shadow: -10px 2px 2px 1px #006400; left: 2px; bottom: 2px;}
+  100% {box-shadow: 0; left: 0; bottom: 0;}
 }
 
 .pop {
@@ -58,6 +75,9 @@ html {
 
 .title {
   font-size: 300%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: lighter;
+  letter-spacing: 2px;
 }
 
 .container {
@@ -69,7 +89,9 @@ html {
 .wrapper {
   width: 100%;
   background: #77ba40;
-  text-align: center;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
@@ -336,4 +358,11 @@ nav li {
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   
+}
+
+.intro{
+  width: 89%;
+  position: absolute;
+  top: 40px;
+  right: 0;
 }
