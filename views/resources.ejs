@@ -7,11 +7,11 @@
   </head>
   <body>
 
-<div class="wrapper">
+<div class="wrapper" id="wrapper-begin">
   <img src="imgs/Chem expo logo.png" alt="logo" class="logo"> 
 </div>
 <header id="header1">
-    <div class="container">
+    <div class="container1">    
 
       <nav>
         <ul>
@@ -34,12 +34,30 @@
     </div>
 
     </header>
+    <a href="#wrapper-begin" style="position: fixed; bottom: 8px; right: 4px; visibility: hidden;" id="back2Top">Back To Top</a>
+    <div style="text-align: center; padding-top: 8px;">
+      <a class="space1" href="#acs-begin">ACS</a>
+      <a class="space1" href="#mol-begin">Molecule Maker</a>
+      <a class="space1" href="#regRef-begin">Regents Reference Table</a>
+      <a class="space1" href="#apRef-begin">AP Reference Table</a>
+    </div>
 
-    <a target="_blank" href="https://bthsacschem.wordpress.com/">BTHS American Chemical Society</a>
-    <br>
-    <a target="_blank" href="http://www.kentchemistry.com/newRT.pdf">Regents Chemistry Reference Table</a>
-    <br>
-    <a target="_blank" href="https://molview.org/">Make your own Molecule!</a>
+    <a class="" id="acs-begin" href="https://bthsacschem.wordpress.com/" target="_blank"><h1 class="link">BTHS ACS Chem Club</h1></a>
+    <div style="text-align: center;">
+      <object data="https://bthsacschem.wordpress.com/" type="text/html" width="70%" height="800px" style="overflow: auto; border: 2px ridge black;"></object>
+    </div>
+    <a href="https://elearning.cpp.edu/learning-objects/making-molecules/index.html" target="_blank"><h1 class="link" id="mol-begin">Molecule Maker</h1></a>
+    <div style="text-align: center;">
+      <object data="https://elearning.cpp.edu/learning-objects/making-molecules/index.html" type="text/html" width="61%" height="920px" style="overflow-y: hidden; border: 2px ridge black;"></object>
+    </div>
+    <a href="http://www.kentchemistry.com/newRT.pdf" target="_blank"><h1 class="link" id="regRef-begin">Regents Chemistry Reference Table</h1></a>
+    <div style="text-align: center;">
+    <iframe src="http://www.kentchemistry.com/newRT.pdf" width="60%" height="845px" frameborder="0"></iframe>
+  </div>
+    <a href="https://bhs.banning.k12.ca.us/documents/Webmaster/AP%20Courses/Chem%20AP%20Formula%20Sheet.pdf" target="_blank"><h1 id="apRef-begin" class="link">AP Chemistry Reference Table</h1></a>
+    <div style="text-align: center;">
+    <iframe src="https://bhs.banning.k12.ca.us/documents/Webmaster/AP%20Courses/Chem%20AP%20Formula%20Sheet.pdf" width="60%" height="845px" frameborder="0"></iframe>
+  </div>
 </body>
-
+<script src="js/index.js" charset="utf-8"></script>
 </html>

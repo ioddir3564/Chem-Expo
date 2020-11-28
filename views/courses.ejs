@@ -42,31 +42,31 @@
         <div class="chapters">
             <h2>Chapters</h2>
             <hr class="space">
-            <button id="0" class="section" onclick="chapterSelect(this);">Chapter 1</button> 
+            <button id="0R" class="section" onclick="chapterSelect(this);">Chapter 1</button> 
             <hr class="space">
-            <button id="1" class="section" onclick="chapterSelect(this);">Chapter 2</button>
+            <button id="1R" class="section" onclick="chapterSelect(this);">Chapter 2</button>
             <hr class="space">
-            <button id="2" class="section" onclick="chapterSelect(this);">Chapter 3</button>
+            <button id="2R" class="section" onclick="chapterSelect(this);">Chapter 3</button>
             <hr class="space">
-            <button id="3" class="section" onclick="chapterSelect(this);">Chapter 4</button>
+            <button id="3R" class="section" onclick="chapterSelect(this);">Chapter 4</button>
             <hr class="space">
-            <button id="4" class="section" onclick="chapterSelect(this);">Chapter 5</button>
+            <button id="4R" class="section" onclick="chapterSelect(this);">Chapter 5</button>
             <hr class="space">
         </div>
         <div id="chapter-div">
-            <div class="chapter">
+            <div class="chapterR">
                 <h1 class="chapter-title">Chapter 1</h1>
             </div>
-            <div class="chapter">
+            <div class="chapterR">
                 <h1 class="chapter-title">Chapter 2</h1>
             </div>
-            <div class="chapter">
+            <div class="chapterR">
                 <h1 class="chapter-title">Chapter 3</h1>
             </div>
-            <div class="chapter">
+            <div class="chapterR">
                 <h1 class="chapter-title">Chapter 4</h1>
             </div>
-            <div class="chapter">
+            <div class="chapterR">
                 <h1 class="chapter-title">Chapter 5</h1>
             </div>
         </div>   
@@ -77,31 +77,31 @@
         <div class="chapters">
             <h2>Chapters</h2>
             <hr class="space">
-            <button id="0" class="section" onclick="chapterSelect(this);">Chapter 1</button> 
+            <button id="0A" class="section" onclick="chapterSelect(this);">Chapter 1</button> 
             <hr class="space">
-            <button id="1" class="section" onclick="chapterSelect(this);">Chapter 2</button>
+            <button id="1A" class="section" onclick="chapterSelect(this);">Chapter 2</button>
             <hr class="space">
-            <button id="2" class="section" onclick="chapterSelect(this);">Chapter 3</button>
+            <button id="2A" class="section" onclick="chapterSelect(this);">Chapter 3</button>
             <hr class="space">
-            <button id="3" class="section" onclick="chapterSelect(this);">Chapter 4</button>
+            <button id="3A" class="section" onclick="chapterSelect(this);">Chapter 4</button>
             <hr class="space">
-            <button id="4" class="section" onclick="chapterSelect(this);">Chapter 5</button>
+            <button id="4A" class="section" onclick="chapterSelect(this);">Chapter 5</button>
             <hr class="space">
         </div>
         <div id="chapter-div">
-            <div class="chapter">
+            <div class="chapterA">
                 <h1 class="chapter-title">Chapter 1</h1>
             </div>
-            <div class="chapter">
+            <div class="chapterA">
                 <h1 class="chapter-title">Chapter 2</h1>
             </div>
-            <div class="chapter">
+            <div class="chapterA">
                 <h1 class="chapter-title">Chapter 3</h1>
             </div>
-            <div class="chapter">
+            <div class="chapterA">
                 <h1 class="chapter-title">Chapter 4</h1>
             </div>
-            <div class="chapter">
+            <div class="chapterA">
                 <h1 class="chapter-title">Chapter 5</h1>
             </div>
         </div>   
@@ -115,20 +115,32 @@
     var ap=document.querySelector("#ap")
     var regBtn = document.querySelector("#reg-btn")
     var apBtn = document.querySelector("#ap-btn")
-    var list = document.getElementById("chapter-div").querySelectorAll(".chapter")
-    list[0].style.display = "block"
+    var listR = document.querySelectorAll(".chapterR")
+    var listA = document.querySelectorAll(".chapterA")
+    listR[0].style.display = "block"
     for (var i = 1; i < list.length; i++){
             list[i].style.display = "none"
         }
     function chapterSelect(btnElem){
         console.log(list);
         console.log(btnElem.id);
-        for (var i = 0; i < list.length; i++){
-            if (i == btnElem.id){
-                list[i].style.display = "block"
+        if (btnElem.id[1] == 'R'){    
+            for (var i = 0; i < listR.length; i++){
+                if (i == btnElem.id){
+                    listR[i].style.display = "block"
+                }
+                else{
+                    listR[i].style.display = "none"
+                }
             }
-            else{
-                list[i].style.display = "none"
+        } else{
+            for (var i = 0; i < listA.length; i++){
+                if (i == btnElem.id){
+                    listA[i].style.display = "block"
+                }
+                else{
+                    listA[i].style.display = "none"
+                }
             }
         }
     }

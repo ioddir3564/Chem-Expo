@@ -11,8 +11,10 @@ var sticky = navbar.offsetTop;
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
+    document.getElementById('back2Top').style.visibility = "visible"
   } else {
     navbar.classList.remove("sticky");
+    document.getElementById('back2Top').style.visibility = "hidden"
   }
 }
 
