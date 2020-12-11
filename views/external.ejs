@@ -16,12 +16,12 @@
 <h4 class="author"><%= post.author %> </h4>
 <h1 id="mainImg-h1" style="display: none;"><%= post.mainImg %></h1>
 <img id="mainImg" style="height: 200px; margin-left: 30%;" src="<%= post.mainImg %> " alt="">
-<div class="focuscontent"> 
-<p id="cco"><%= post.content %> </p>
+<div class="focuscontent">
+<%- post.content %>
 </div>
 </body>
 
-<script>
+<!-- <script>
   var text = document.getElementById('cco').innerHTML
   document.getElementById('cco').remove()
   var i = 0;
@@ -108,6 +108,6 @@
   if (mainImgH1.innerHTML == ''){
     mainImg.style.display = 'none'
   }
-</script>
+</script> -->
 
 </html>
