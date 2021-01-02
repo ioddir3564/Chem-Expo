@@ -153,8 +153,8 @@ app.get('/mission-control', function(req, res){
     }
 })
 
-app.get('/profile', (req, res)=> {
-    var email = req.query.ID;    // /irfaz_oddir
+app.get('/profile/:emailid', (req, res)=> {
+    var email = req.params.emailid;    // /irfaz_oddir
     // for (var i = 0; i < username.length; i++){
     //     if (username[i] == "_"){
     //         username[i] = " "
@@ -178,7 +178,15 @@ app.get('/profile', (req, res)=> {
                 i++
             }
             first = first.toLowerCase()
-            res.render('profile', {arr: posts, fName: first})
+            Admin.findOne({email: email}, (err, foundUser)=>{
+                if (err){
+                    console.log(err);
+                }
+                else{
+                    console.log(foundUser);
+                    res.render('profile', {arr: posts, fName: first, person: foundUser})
+                }
+            })
         }
     })
 })
