@@ -166,6 +166,9 @@ app.get('/profile/:emailid', (req, res)=> {
             console.log(err);
         }
         else{
+            if (posts[0] == undefined){
+                res.redirect('/')
+            } else{
             author = posts[0].author
             var first = ""
             var i = 0
@@ -187,7 +190,7 @@ app.get('/profile/:emailid', (req, res)=> {
                     res.render('profile', {arr: posts, fName: first, person: foundUser})
                 }
             })
-        }
+        }}
     })
 })
 
