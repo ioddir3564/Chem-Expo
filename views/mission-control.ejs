@@ -71,11 +71,11 @@
         <li><button onclick="header();">Header</button></li>
         <li><button onclick="paragraph();">Paragraph</button></li>
         <li><button onclick="image();">Image</button></li>
-        <li><button onclick="viedo();">YouTube Video</button></li>
+        <li><button onclick="video();">YouTube Video</button></li>
         <li><button onclick="br();">Line Break</button></li>
       </ul>
       <button onclick="update();">Update</button>
-      <div id="addition" style="overflow-y: scroll;">
+      <div id="addition" style="overflow-y: scroll; width: 400px; height: 400px;">
 
       </div>
     </div>
@@ -226,15 +226,10 @@
 </footer>
 <script>
   var div = document.getElementById('addition')
-  function removeElem(id){
+  function removeElem(element, input){
     console.log(div.childNodes);
-    div.removeChild(div.childNodes[id])
-    console.log(div.childNodes);
-    div.removeChild(div.childNodes[id]) 
-    if (id == 0){
-      div.removeChild(div.childNodes[id]) 
-    }
-    console.log(div.childNodes);
+    div.removeChild(element)
+    div.removeChild(input)
     update()
   }
 
@@ -262,40 +257,71 @@
 
   function header(){
     var input = document.createElement('input')
-    input.style.width = "80%"
+    input.style.width = "350px"
     input.value = '<h1 style="_styling_here_">_text_here_</h1>'
     var x = document.createElement('button')
+    x.innerHTML = 'X'
     x.id = div.childNodes.length-1;
-    x.onclick = function() {removeElem(this.id)}
+    x.onclick = function() {removeElem(this, input)}
     div.appendChild(x)
     div.appendChild(input)
+    var br = document.createElement('BR')
+    div.appendChild(br)
   }
   function paragraph(){
     var input = document.createElement('input')
-    input.style.width = "80%"
+    input.style.width = "350px"
     input.value = '<p style="_styling_here_">_text_here_</p>'
+    var x = document.createElement('button')
+    x.innerHTML = 'X'
+    x.id = div.childNodes.length-1;
+    x.onclick = function() {removeElem(this, input)}
+    div.appendChild(x)
     div.appendChild(input)
+    var br = document.createElement('BR')
+    div.appendChild(br)
   }
 
   function image(){
     var input = document.createElement('input')
-    input.style.width = "80%"
+    input.style.width = "350px"
     input.value = '<img src="_link_here_" style="_styling_here_">'
+    var x = document.createElement('button')
+    x.innerHTML = 'X'
+    x.id = div.childNodes.length-1;
+    x.onclick = function() {removeElem(this, input)}
+    div.appendChild(x)
     div.appendChild(input)
+    var br = document.createElement('BR')
+    div.appendChild(br)
   }
 
   function video(){
     var input = document.createElement('input')
-    input.style.width = "80%"
+    input.style.width = "350px"
     input.value = '<iframe width="500" height="345" src="_link_here_"</iframe>'
+    var x = document.createElement('button')
+    x.innerHTML = 'X'
+    x.id = div.childNodes.length-1;
+    x.onclick = function() {removeElem(this, input)}
+    div.appendChild(x)
     div.appendChild(input)
+    var br = document.createElement('BR')
+    div.appendChild(br)
   }
 
   function br(){
     var input = document.createElement('input')
-    input.style.width = "80%"
+    input.style.width = "350px"
     input.value = '<br>'
+    var x = document.createElement('button')
+    x.innerHTML = 'X'
+    x.id = div.childNodes.length-1;
+    x.onclick = function() {removeElem(this, input)}
+    div.appendChild(x)
     div.appendChild(input)
+    var br = document.createElement('BR')
+    div.appendChild(br)
   }
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

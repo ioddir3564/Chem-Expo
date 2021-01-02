@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/profile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= arr[0].author %> </title>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="../imgs/Chem expo logo.png" alt="logo" class="logo">
+        <div class="intro">
+            
+        </div>
+      </div>
+      <div id="profile-wrapper">
+      <div class="post-container">
+          <h1>Posts</h1>
+        
+        <% for (var i = arr.length-1; i >= 0; i--) { %>
+          
+          <div id="<%= i %>" class="overlay">
+            <div id="text-box">
+              <button id="<%= [i] %>" onclick="off(this.id);" style="float: right;">X</button>
+              <h1 id="popup-id"><%= arr[i].title %></h1>
+              <h5 style="font-size: 25px;">By <%= arr[i].author %></h5>
+              <div class="focuscontent"> 
+              <%- arr[i].content %>
+              </div>
+            </div>
+          </div>
+  
+          <div class="Post">
+            <a id="<%= [i] %>" class=pop onclick="on(this.id);" href="#">View Pop up</a>
+            <a class=stay href="/external?ID=<%= arr[i].id %>">Same page</a>
+            <a class=new href="/external?ID=<%= arr[i].id %>" target="_blank">New link</a>
+            <h4 class="title"><%= arr[i].title %></h4>
+            <h1 style="display: none;" class="name"><%= arr[i].author.toLowerCase() %></h1>
+            
+            <h5>By <%= arr[i].author %></h5>
+            <img class="cover-img" src="<%= arr[i].mainImg %>" alt="">
+            
+          </div>
+          <hr style="visibility:hidden;">
+   <%   } %>
+        </div>
+        <div class="bio">
+            <div style="width: 100%; text-align: center;">
+            <img src="../imgs/<%= fName %>pic.jpg" class="pfp" alt="">
+            </div>
+            <h1 style="text-align: center;"><%= arr[0].author %> </h1>
+            <p style="width: 100%; height: 80%; float: left;"><%= person.bio %> </p>
+
+            <% for (var i = 0; i < person.links.length; i++){ %> 
+            <a href="<%= person.links[i][1] %>" target="_blank"><%= person.links[i][0] %></a>
+            <% } %> 
+        </div>
+    </div>
+</body>
+</html>
+<script src="../js/index.js" charset="utf-8"></script>

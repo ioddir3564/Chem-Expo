@@ -74,11 +74,10 @@
           <div id="text-box">
             <button id="<%= [i] %>" onclick="off(this.id);" style="float: right;">X</button>
             <h1 id="popup-id"><%= arr[i].title %></h1>
-            <h5>By <%= arr[i].author %></h5>
+            <h5 style="font-size: 25px;">By <%= arr[i].author %></h5>
             <div class="focuscontent"> 
-            <p id="cco"><%= arr[i].content %></p>
+            <%- arr[i].content %>
             </div>
-            <h1>Hey</h1>
           </div>
         </div>
 
@@ -87,13 +86,13 @@
           <a class=stay href="/external?ID=<%= arr[i].id %>">Same page</a>
           <a class=new href="/external?ID=<%= arr[i].id %>" target="_blank">New link</a>
           <h4 class="title"><%= arr[i].title %></h4>
-          
-          <img src="imgs/<%= arr[i].author.toLowerCase() %>pic.jpg" style="width: 10%; border-radius: 50%;" alt="">
+          <h1 style="display: none;" class="name"><%= arr[i].author.toLowerCase() %></h1>
+          <img src="imgs/<%= fNameArr[i] %>pic.jpg" style="width: 10%; border-radius: 50%;" alt="">
           <h5>By <%= arr[i].author %></h5>
           <img class="cover-img" src="<%= arr[i].mainImg %>" alt="">
-          <p style=" width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-          font-weight: lighter;"><%= arr[i].content %></p>
-          
+          <div style="height: 350px; overflow: scroll; width: 100%;">
+          <%- arr[i].content %>
+        </div>
         </div>
         <hr style="visibility:hidden;">
  <%   } %>
@@ -119,65 +118,7 @@
   
 
 
-  var text = document.getElementById('cco').innerHTML
-  console.log('text1');
-  console.log(text);
-  document.getElementById('cco').remove()
-  console.log('text2');
-  console.log(text);
-  var i = 0;
-  var textContent = ''
-  while (i < text.length){
-    if (i == text.length-1){
-      if (textContent.length > 0){
-        textContent += text[i]
-        var pElem = document.createElement('p')
-        pElem.innerHTML = textContent
-        document.querySelector(".focuscontent").appendChild(pElem);
-        textContent = ''
-      } 
-    }
-    if (text[i] == '^' && text[i+1] == '+'){
-      if (textContent.length > 0){
-        var pElem = document.createElement('p')
-        pElem.innerHTML = textContent
-        document.querySelector(".focuscontent").appendChild(pElem);
-        textContent = ''
-    }
-      var j = i+2;
-      var src = ''
-      var style = ''
-      while (text[j] != '+' && text[j+1] != '^'){
-        if (text[j] == '$'){
-          j++
-          while (text[j] != '+'){
-            style += text[j]
-            j++
-          }
-        }
-        else{
-          src += text[j]
-          j++
-        }
-      }
-      console.log(style);
-      console.log(src);
-      var imgElem = document.createElement('img');
-      console.log('first');
-      console.log(imgElem)
-      imgElem.src = src
-      imgElem.style = style
-      console.log('second');
-      console.log(imgElem);
-      console.log();
-      document.querySelector(".focuscontent").appendChild(imgElem);
-      i = (j+2);
-    }
-    else{
-      textContent += text[i]
-      i++
-    }
-  }
+
 </script>
 
 <script src="js/index.js" charset="utf-8"></script>

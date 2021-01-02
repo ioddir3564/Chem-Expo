@@ -12,102 +12,18 @@
 </div>
 
 <h1 class="blogtitle"><%= post.title %> </h1>
-<img class="oddir" src="imgs/<%= fNameObj.name %>pic.jpg"  alt="">
+<div class="cont">
+<img class="author-img" src="imgs/<%= fNameObj.name %>pic.jpg"  alt="">
 <h4 class="author"><%= post.author %> </h4>
+</div>
 <h1 id="mainImg-h1" style="display: none;"><%= post.mainImg %></h1>
-<img id="mainImg" style="height: 200px; margin-left: 30%;" src="<%= post.mainImg %> " alt="">
+<% if (post.mainImg != ''){ %> 
+<img id="mainImg" src="<%= post.mainImg %>" alt="">
+<% } %>
 <div class="focuscontent">
 <%- post.content %>
 </div>
-</body>
 
-<!-- <script>
-  var text = document.getElementById('cco').innerHTML
-  document.getElementById('cco').remove()
-  var i = 0;
-  var textContent = ''
-  while (i < text.length){
-    if (i == text.length-1){
-      if (textContent.length > 0){
-        var pElem = document.createElement('p')
-        pElem.innerHTML = textContent
-        document.querySelector(".focuscontent").appendChild(pElem);
-        textContent = ''
-      } 
-    }
-    if (text[i] == '^' && text[i+1] == '+'){
-      if (textContent.length > 0){
-        var pElem = document.createElement('p')
-        pElem.innerHTML = textContent
-        document.querySelector(".focuscontent").appendChild(pElem);
-        textContent = ''
-    }
-      var j = i+2;
-      var src = ''
-      var style = ''
-      while (text[j] != '+' && text[j+1] != '^'){
-        if (text[j] == '$'){
-          j++
-          while (text[j] != '+'){
-            style += text[j]
-            j++
-          }
-        }
-        else{
-          src += text[j]
-          j++
-        }
-      }
-      var imgElem = document.createElement('img');
-      imgElem.src = src
-      imgElem.style = style
-      document.querySelector(".focuscontent").appendChild(imgElem);
-      i = (j+2);
-    }
-    else if (text[i] == '!' && text[i+1] == '@'){
-      if (textContent.length > 0){
-        var pElem = document.createElement('p')
-        pElem.innerHTML = textContent
-        document.querySelector(".focuscontent").appendChild(pElem);
-        textContent = ''
-      }
-      var j = i+2;
-      var src = ''
-      var style = ''
-      while (text[j] != '@' && text[j+1] != '!'){
-        if (text[j] == '$'){
-          j++
-          while (text[j] != '@'){
-            style += text[j]
-            j++
-          }
-        }
-        else{
-          src += text[j]
-          j++
-        }
-      }
-      var vidElem = document.createElement('IFRAME');
-      vidElem.setAttribute("src", src)
-      vidElem.style = style
-      vidElem.style.border = "none"
-      vidElem.setAttribute('allowFullScreen', '')
-      document.querySelector(".focuscontent").appendChild(vidElem);
-      i = (j+2);
-    }
-    else{
-      textContent += text[i]
-      i++
-    }
-  }
-  var mainImgH1 = document.getElementById('mainImg-h1')
-  console.log(mainImgH1);
-  var mainImg = document.getElementById('mainImg')
-  console.log(mainImg);
-  // console.log(mainImg.src);
-  if (mainImgH1.innerHTML == ''){
-    mainImg.style.display = 'none'
-  }
-</script> -->
+</body>
 
 </html>

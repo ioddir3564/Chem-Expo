@@ -18,8 +18,8 @@ app.use(session({
     cookieName: 'session',
     // secret: 'random_string_goes_here',
     secret: "hey",
-    duration: 30 * 60 * 1000,
-    activeDuration: 5 * 60 * 1000,
+    duration: 7200000,
+    activeDuration: 7200000,
   }));
 app.use(flash())
 
@@ -27,7 +27,9 @@ app.set('view engine', 'ejs')
 
 const adminSchema = new mongoose.Schema({
     email: String,
-    password: String
+    password: String,
+    bio: String,
+    links: Array
 })
 
 const postSchema = new mongoose.Schema({
@@ -42,7 +44,7 @@ const postSchema = new mongoose.Schema({
 const Admin = new mongoose.model("Admin", adminSchema)
 const Post = new mongoose.model("Post", postSchema)
 
-const URI = "mongodb+srv://isfarO:testing321@cluster0.tyfbo.mongodb.net/chem-testing?retryWrites=true&w=majority"
+const URI = process.env.API_KEY
 
 const connectDB = async() => {
     await mongoose.connect(URI, {useUnifiedTopology: true, useNewUrlParser: true})
@@ -64,7 +66,23 @@ app.get('/', function(req, res){
         }
         else{
             arr = postArr
-            res.render('index', {arr: arr});
+            var fNameArr = []
+            arr.forEach(element => {
+                var first = ""
+                var i = 0
+                while (element.author[i] != " "){
+                    if (i == element.author.length-1){
+                        first += element.author[i]
+                        break
+                    }
+                    first += element.author[i]
+                    i++
+                }
+                first = first.toLowerCase()
+                console.log(first);
+                fNameArr.push(first)
+            });
+            res.render('index', {arr: arr, fNameArr: fNameArr});
         }
     })
     
@@ -133,6 +151,44 @@ app.get('/mission-control', function(req, res){
     else{
         res.redirect("/admin")
     }
+})
+
+app.get('/profile/:emailid', (req, res)=> {
+    var email = req.params.emailid;    // /irfaz_oddir
+    // for (var i = 0; i < username.length; i++){
+    //     if (username[i] == "_"){
+    //         username[i] = " "
+    //     }
+    // }
+    var author = []
+    Post.find({email: email}, (err, posts)=>{
+        if (err){
+            console.log(err);
+        }
+        else{
+            author = posts[0].author
+            var first = ""
+            var i = 0
+            while (author[i] != " "){
+                if (i == author.length-1){
+                    first += author[i]
+                    break
+                }
+                first += author[i]
+                i++
+            }
+            first = first.toLowerCase()
+            Admin.findOne({email: email}, (err, foundUser)=>{
+                if (err){
+                    console.log(err);
+                }
+                else{
+                    console.log(foundUser);
+                    res.render('profile', {arr: posts, fName: first, person: foundUser})
+                }
+            })
+        }
+    })
 })
 
 app.post('/admin', function(req, res){
@@ -238,7 +294,7 @@ app.post("/save", function(req, res){
 
 
 
-app.listen(3001, function(){
+app.listen(process.env.PORT, function(){
     console.log("server is on 8000");
 })
 

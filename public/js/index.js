@@ -56,10 +56,11 @@ function myFunction2(event) {
   console.log(list[0].childNodes[7]);
   for (var i = 0; i < list.length; i++){
     title = list[i].childNodes[7].innerHTML.toLowerCase()
+
     console.log(title);
-    author = list[i].childNodes[11].innerHTML.toLowerCase()
+    author = list[i].childNodes[13].innerHTML.toLowerCase()
     console.log(author);
-    content = list[i].childNodes[15].innerHTML.toLowerCase()
+    content = list[i].childNodes[17].innerHTML.toLowerCase()
     console.log(content);
     for (var t = 0; t < title.length; t++){
       if (t == title.length-1){

@@ -1,0 +1,417 @@
+body {
+    margin: 0;
+    background: #F5F5F5;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    overflow-wrap: break-word;
+  }
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .logo {
+    width: 8%;
+    margin-left: 20px;
+    transform: skew(20deg);
+    position: relative;
+    animation: move 2s infinite;
+  }
+  
+  @keyframes move {
+    0% {box-shadow: 0; left: 0; bottom: 0;}
+    10% {box-shadow: -10px 2px 2px 1px #006400; left: 2px; bottom: 2px;}
+    20% {box-shadow: -10px 4px 4px 1px #006400; left: 4px; bottom: 4px;}
+    30% {box-shadow: -10px 6px 6px 1px #006400; left: 6px; bottom: 6px;}
+    40% {box-shadow: -10px 8px 8px 1px #006400; left: 8px; bottom: 8px;}
+    /* 50% {box-shadow: 0; top: 10px; bottom: 10px;} */
+    60% {box-shadow: -10px 8px 8px 1px #006400; left: 8px; bottom: 8px;}
+    70% {box-shadow: -10px 6px 6px 1px #006400; left: 6px; bottom: 6px;}
+    80% {box-shadow: -10px 4px 4px 1px #006400; left: 4px; bottom: 4px;}
+    90% {box-shadow: -10px 2px 2px 1px #006400; left: 2px; bottom: 2px;}
+    100% {box-shadow: 0; left: 0; bottom: 0;}
+  }
+  
+  #popup-id{
+    font-size: 50px;
+  }
+  
+  .pop {
+    border: solid black;
+    border-width: 1px;
+    padding: 5px;
+    float: right;
+    margin-right: 5%;
+    text-decoration: none;
+    margin-inline: auto;
+  }
+  .pop:hover{
+    color: white;
+    background-color:rgb(86, 195, 91);;
+  }
+  .stay {
+  
+    border: solid black;
+    border-width: 1px;
+    padding: 5px;
+    float: right;
+    margin-right: 5%;
+    text-decoration: none;
+    margin-inline: auto;
+  }
+  .stay:hover{
+    color: white;
+    background-color: rgb(86, 195, 91);
+  }
+  .new {
+    border: solid black;
+    border-width: 1px;
+    padding: 5px;
+    float: right;
+    margin-right: 5%;
+    text-decoration: none;
+    margin-inline: auto;
+  }
+  .new:hover{
+    color: white;
+    background-color:rgb(86, 195, 91);;
+  }
+  
+  .title {
+    font-size: 300%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 2px;
+  }
+  
+  .container {
+    width: 100%;
+    background: #cbe8b5;
+    
+  }
+  
+  .wrapper {
+    width: 100%;
+    background: #77ba40;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  
+  header {
+    /* background: #3CB371; */
+    height: auto;
+    text-align: center;
+  
+  }
+  
+  .SearchBar {
+    /* padding: 20px 100px 10px 100px; */
+    position: fixed;
+    margin-left: 13%;
+    top: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 20%;
+    background: white;
+    text-align: center;
+    font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+  
+  .mode {
+    position: fixed;
+    margin-left: 13%;
+    top: 240px;
+    text-decoration: none;
+    padding-top: 10px;
+    color:white;
+    padding-bottom: 10px;
+    width: 10%;
+    background: black;
+    text-align: center;
+    font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .mode:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .mode:active {
+    color: #000
+  }
+  
+  .mode:active:after {
+    background: transparent;
+  }
+  
+  .mode:hover:before {
+    opacity: 1;
+  }
+  
+  .mode:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  .mode1 {
+    position: fixed;
+    margin-left: 13%;
+    top: 240px;
+    text-decoration: none;
+    padding-top: 10px;
+    color:black;
+    padding-bottom: 10px;
+    width: 10%;
+    background: black;
+    text-align: center;
+    font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: white;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .mode1:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .mode1:active {
+    color: black;
+  }
+  
+  .mode1:active:after {
+    background: transparent;
+  }
+  
+  .mode1:hover:before {
+    opacity: 1;
+  }
+  
+  .mode1:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+  }
+  
+  .Fact {
+    max-height: 20%;
+    padding: 50px 50px 100px 50px;
+    overflow-y: scroll;
+    position: fixed;
+    margin-left: 13%;
+    top: 500px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 20%;
+    background: white;
+    text-align: center;
+    font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+  
+  .Blog {
+    text-align: left;
+    text-align: bottom;
+  }
+  
+  .Post {
+    padding: 50px 100px 100px 100px;
+    width: 60%;
+    background-color: white;
+    text-align: left;
+    border: solid black;
+    border-width: 0;
+    border-radius: 3px;
+    margin-left: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+
+  .bio{
+    padding: 50px 100px 100px 100px;
+    width: 40%;
+    background-color: white;
+    /* text-align: center; */
+    text-align: left;
+    border: solid black;
+    border-width: 0;
+    border-radius: 3px;
+    margin-left: 35%;
+    margin-top: 200px;
+    height: 600px;
+  /* background: black; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+
+  .pfp{
+    width: 250px; 
+    border-radius: 50%;
+    margin-top: -170px;
+    border: solid greenyellow;
+    border-width: thick;
+  }
+
+  .profile-wrapper{
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+  }
+  
+  .cover-img{
+    width: 20%;
+  }
+  
+  .post-container{
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    margin-top: -150px;
+    float: left;
+  
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  nav ul {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin: 30px 1%;
+    padding-top: 5px;
+  }
+  
+  .others {
+    color: #444;
+    padding: 10px;
+    text-decoration: none;
+    
+  }
+  .others:hover {
+    border-radius: 3px;
+    border-width: 1px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(86, 195, 91);
+  }
+  
+  #current {
+    /* border: solid black;
+    border-radius: 5px; */
+    font-weight: bold;
+    text-decoration: none;
+    /* background-color: red; */
+  }
+  
+  .overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  
+  #text-box{
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 90%;
+    width: 50%;
+    overflow-y: scroll;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: black;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    
+  }
+  
+  .focuscontent{
+    font-size: large;
+  
+  }
+  
+  p{
+    width: 900px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    text-align: left;
+  }
+  
+  .intro{
+    width: 89%;
+    position: absolute;
+    top: 40px;
+    right: 0;
+  }
+  

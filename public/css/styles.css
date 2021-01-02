@@ -32,6 +32,10 @@ html {
   100% {box-shadow: 0; left: 0; bottom: 0;}
 }
 
+#popup-id{
+  font-size: 50px;
+}
+
 .pop {
   border: solid black;
   border-width: 1px;
@@ -346,6 +350,8 @@ nav li {
 
 #text-box{
   padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
   height: 90%;
   width: 50%;
   overflow-y: scroll;
@@ -358,6 +364,20 @@ nav li {
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   
+}
+
+.focuscontent{
+  font-size: large;
+
+}
+
+p{
+  width: 900px; /* Can be in percentage also. */
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+  text-align: left;
 }
 
 .intro{

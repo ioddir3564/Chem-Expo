@@ -48,6 +48,8 @@ header {
       height: auto;
   }
 
+  
+
   .image:hover{
       z-index: 1;
       width: 60%;
@@ -61,6 +63,31 @@ header {
       font-weight: lighter;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       width: 70%;
+  }
+
+  .link{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: -20px;
+    background-color: #02203c;
+    border-radius: 50%;
+  }
+  .Creators ul{
+    position:absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 20px; text-align: left;
+}
+
+  ul a{
+    float: left;
+  }
+  .Creators a{
+    width: 40%;
+    height: 100%;
+    color: white;
+    
   }
 
   #current {
@@ -101,4 +128,32 @@ header {
   font-weight: bold;
   color: white;
   background-color: rgb(86, 195, 91);
+  }
+
+
+  .space1{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    position: relative;
+    color: white;
+  }
+
+  .space1::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: white;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0px;
+  }
+
+  .space1:hover::after{
+    width: 100%;
+    left: 0;
   }
