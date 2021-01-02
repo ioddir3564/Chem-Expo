@@ -178,15 +178,7 @@ app.get('/profile', (req, res)=> {
                 i++
             }
             first = first.toLowerCase()
-            Admin.findOne({email: email}, (err, foundUser)=>{
-                if (err){
-                    console.log(err);
-                }
-                else{
-                    console.log(foundUser);
-                    res.render('profile', {arr: posts, fName: first, person: foundUser})
-                }
-            })
+            res.render('profile', {arr: posts, fName: first})
         }
     })
 })
