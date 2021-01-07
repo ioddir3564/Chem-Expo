@@ -40,7 +40,7 @@
 
         <div class="person">
             <img id="0" class="image" src="imgs/irfazpic.jpg" alt="">
-            <div id="0div" name="0" class="link" style="display: none;">
+            <div id="0div" class="0 link" style="display: none;">
               <ul>
               <a target="_blank" class="space1" href="https://www.linkedin.com/in/irfaz-oddir-61a1b21b8/">LinkedIn</a>
               <a target="_blank" class="space1" href="/profile/ioddir3564@bths.edu">Profile</a>
@@ -53,7 +53,7 @@
         </div>
         <div class="person">
           <img id="1" class="image" src="imgs/isfarpic.jpg" alt="">
-          <div id="1div" name="1" class="link" style="display: none;">
+          <div id="1div" class="1 link" style="display: none;">
             <ul>
             <a href="https://www.linkedin.com/in/isfar-oshir-043403190/" class="space1" target="_blank">LinkedIn</a>
           </ul>
@@ -71,7 +71,7 @@
         <h1>Executives of BTHS Chem Club</h1>
         <div class="person">
           <img id="2" class="image" src="imgs/loripic.jpg" alt="">
-          <div id="2div" name="2" class="link" style="display: none;">
+          <div id="2div" class="2 link" style="display: none;">
             <ul>
             <a target="_blank" class="space1" href="https://bthsacschem.wordpress.com/about/">ACS</a>
               <a target="_blank" class="space1" href="/profile/Ltsang5994@bths.edu">Profile</a>
@@ -84,7 +84,7 @@
         </div>
         <div class="person">
           <img id="3" class="image" src="imgs/emilypic.jpg" alt="">
-          <div id="3div" name="3" class="link" style="display: none;">
+          <div id="3div" class="3 link" style="display: none;">
             <ul>
             <a target="_blank" class="space1" href="https://bthsacschem.wordpress.com/about/">ACS</a>
             <a target="_blank" class="space1" href="/profile/echen7534@bths.edu">Profile</a>
@@ -96,7 +96,7 @@
           </div>
         <div class="person">
             <img id="4" class="image" src="imgs/irfazpic.jpg" alt="">
-            <div id="4div" name="4" class="link" style="display: none;">
+            <div id="4div" class="4 link" style="display: none;">
               <ul>
               <a target="_blank" class="space1" href="https://www.linkedin.com/in/irfaz-oddir-61a1b21b8/">LinkedIn</a>
               <a target="_blank" class="space1" href="/profile/ioddir3564@bths.edu">Profile</a>
@@ -109,7 +109,7 @@
         
         <div class="person">
           <img id="5" class="image" src="imgs/tianapic.jpg" alt="">
-          <div id="5div" name="5" class="link" style="display: none;">
+          <div id="5div" class="5 link" style="display: none;">
             <ul>
             <a target="_blank" class="space1" href="https://bthsacschem.wordpress.com/about/">ACS</a>
             <a target="_blank" class="space1" href="/profile/ioddir3564@bths.edu">Profile</a>
@@ -123,7 +123,7 @@
 
       <div class="person">
         <img id="6" class="image" src="imgs/danielpic.jpg" alt="">
-        <div id="6div" name="6" class="link" style="display: none;">
+        <div id="6div" class="6 link" style="display: none;">
           <ul>
           <a target="_blank" class="space1" href="https://bthsacschem.wordpress.com/about/">ACS</a>
           <a target="_blank" class="space1" href="/profile/ioddir3564@bths.edu">Profile</a>
@@ -136,7 +136,7 @@
 
     <div class="person">
       <img id="7" class="image" src="imgs/nikkipic.png" alt="">
-      <div id="7div" name="7" class="link" style="display: none;">
+      <div id="7div" class="7 link" style="display: none;">
         <ul>
         <a target="_blank" class="space1" href="https://bthsacschem.wordpress.com/about/">ACS</a>
         <a target="_blank" class="space1" href="/profile/ioddir3564@bths.edu">Profile</a>    
@@ -156,7 +156,7 @@
         <h1>Contributors</h1>
         <div class="person">
           <img id="8" class="image" src="imgs/yupic.jpg" alt="">
-          <div id="8div" name="8" class="link" style="display: none;">
+          <div id="8div" class="8 link" style="display: none;">
             <ul>
             <a target="_blank" class="space1" href="https://www.linkedin.com/in/yu-rong-chen-524a95202/">LinkedIn</a>
               <a target="_blank" class="space1" href="/profile/ychen3481@bths.edu">Profile</a>
@@ -167,7 +167,7 @@
 
         <div class="person">
           <img id="9" class="image" src="imgs/gabrielpic.jpg" alt="">
-          <div id="9div"  name="9" class="link" style="display: none;">
+          <div id="9div" class="9 link" style="display: none;">
             <ul>
             <a target="_blank" class="space1" href="https://www.instagram.com/ggabb3/">Instagram</a>
               <a target="_blank" class="space1" href="/profile/GAbrielc347@nycstudents.net">Profile</a>
@@ -178,7 +178,7 @@
 
           <div class="person">
             <img id="10" class="image" src="imgs/allanpic.jpg" alt="">
-            <div id="10div" name="10" class="10 link" style="display: none;">
+            <div id="10div" class="10 link" style="display: none;">
               <ul>
                 <a target="_blank" class="space1" href="/profile/ali7812@bths.edu">Profile</a>
               </ul>
@@ -245,12 +245,9 @@
 </html>
 <script>
     var images = document.querySelectorAll(".image")
-    console.log(images);
     images.forEach(item => {
         item.addEventListener('mouseover', event => {
-        console.log(item.id);
         var showDiv = document.getElementById(item.id + 'div')
-        console.log(showDiv);
         showDiv.style.display = "inline-block"
         item.style.display = "none"
         })
@@ -258,14 +255,11 @@
 
 
     var links = document.querySelectorAll(".link")
-    console.log(links);
 
     links.forEach(item => {
         item.addEventListener('mouseleave', event => {
           var id = item.classList[0]
-          console.log(id);
           var img = document.getElementById(id)
-          console.log(img);
           img.style.display = "inline-block"
           item.style.display = "none"
         })
