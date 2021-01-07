@@ -153,7 +153,7 @@
     <hr>
 
     <div class="Creators">
-        <h1>Journalists</h1>
+        <h1>Contributors</h1>
         <div class="person">
           <img id="8" class="image" src="imgs/yupic.jpg" alt="">
           <div id="8div" name="8" class="link" style="display: none;">
@@ -178,7 +178,7 @@
 
           <div class="person">
             <img id="10" class="image" src="imgs/allanpic.jpg" alt="">
-            <div id="10div" name="10" class="link" style="display: none;">
+            <div id="10div" name="10" class="10 link" style="display: none;">
               <ul>
                 <a target="_blank" class="space1" href="/profile/ali7812@bths.edu">Profile</a>
               </ul>
@@ -262,7 +262,9 @@
 
     links.forEach(item => {
         item.addEventListener('mouseleave', event => {
-          var img = document.getElementById(item.name)
+          var id = item.classList[0]
+          console.log(id);
+          var img = document.getElementById(id)
           console.log(img);
           img.style.display = "inline-block"
           item.style.display = "none"
